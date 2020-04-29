@@ -1,21 +1,25 @@
+
 body {
-  background-color: #9ED9CCFF;
+  background-color: #FFDDE2FF;
   font-family: sans-serif;
+}
+
+.page-anchor{
+  text-decoration: none;
+  color:  #008C76FF;
 }
 
 nav {
   height: 10vh;
-
-  background-color: #008C76FF;
+  background-color: #9ED9CCFF;
 }
+
 .nav-anchor{
   text-decoration: none;
-  color:#FFDDE2FF
+  color: #008C76FF;
+  
 }
-.page-anchor{
-  text-decoration: none;
-  color:  rgb(243, 141, 115);
-}
+
 .nav-links {
   display:flex;
   list-style: none; 
@@ -25,12 +29,23 @@ nav {
   justify-content: space-around;
   align-items: center;
   margin-left: auto;
- 
-
 }
 
 .nav-list{
-  color: #FFDDE2FF;
+  
   font-size: 16px;
- 
 }
+
+@media screen and (max-device-width: 500px) and (orientation: portrait){
+        
+}
+@media screen and (max-device-width: 700px) and (orientation: landscape){
+    
+}
+
+//*colors
+   light-pink: #FFDDE2FF
+   salomn-pink: #FAA094FF
+   light-teal: #9ED9CCFF
+   dark-teal: #008C76FF
+*//
