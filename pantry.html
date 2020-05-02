@@ -1,43 +1,64 @@
 <DOCTYPE! HTML>
-  <html>
+  <html lang="en">
     <head>
-      <title> 'Conscious Creations' </title>
+      <style src="app.js"></style>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title> 'Website Name' </title>
+      <link href="style.css" rel="stylesheet" type="text/css">
     </head>
     <header>
-      <h1>Conscious Creations</h1>
       <nav id='nav-bar'>
-        <ul>
+        <div id="title"><h1>Conscious Creations</h1></div>
+          <div class='hamburger'>
+              <div class='line'></div>
+              <div class='line'></div>
+              <div class='line'></div>
+          </div>
+        <ul class='nav-links'>
+          <li class='nav-list'>
+            <a class='nav-anchor' href="index.html">Home</a>
+          </li>
          <li class='nav-list'>
-            <a href="index.html">Home Page</a>
-          </li>
-          <li class='nav-list'>
-            <a href="pantry.html">Pantry</a>
-          </li>
-          <li class='nav-list'>
-            <a href="recipes.html">Recipes</a>
-          </li>
-          <li class='nav-list'><a href="about-us.html">About Us</a>
-          </li>
-          <li class='nav-list'>
-            <a href="contact.html">Contact</a>
-          </li>
+           <a class='nav-anchor'href="pantry.html">Pantry</a>
+         </li>
+         <li class='nav-list'>
+           <a class='nav-anchor' href="recipes.html">Recipes</a>
+         </li>
+         <li class='nav-list'>
+           <a class='nav-anchor'href="about-us.html">About Us</a>
+         </li>
+         <li class='nav-list'>
+           <a class='nav-anchor' href="contact.html">Contact</a>
+         </li>
         </ul>
       </nav>
     </header>
     <body>
-        <div class="pantry">
-          <div id="pantry-header">
-            <h2>Select the Items in Your Pantry</h2>
-          </div>
-          <div class="pantry-items">
-            <input type="checkbox" name="selected" id="selected"><label for=""></label>
-            <input type="checkbox" name="selected" id="selected">
-            <input type="checkbox" name="selected" id="selected">
-            <input type="checkbox" name="selected" id="selected">
-
-          </div>
+      
+      <div class="pantry">
+        <div id="pantryHeader">
+          <h2>Select the Items in Your Pantry</h2>
         </div>
-     
-
-    </body>
-  </html>
+        <div class="pantry-items">
+          <ul class="pantry-list"> 
+            <li class="pantry-list-item"> 
+              <input type="checkbox" name="check_1" id="check1">
+              <label for="check_1">Tomato</label>
+            </li> 
+            <li class="pantry-list-item">
+              <input type="checkbox" name="check2" id="check2">
+              <label for="check_2">Pepper</label>
+            </li> 
+            <li class="pantry-list-item">
+              <input type="checkbox" name="check3" id="check3">
+              <label for="check_3">Onion</label>
+            </li> 
+            <li class="pantry-list-item">        
+                <input type="checkbox" name="check4" id="check4">
+              <label for="check_4">Corn</label>
+            </li> 
+          </ul>
+        </div>
+      </div>
+   
