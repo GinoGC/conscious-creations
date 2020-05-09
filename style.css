@@ -20,6 +20,58 @@ nav {
 }
 .hamburger{
 position: absolute;
+/*All Pages Style*/
+body {
+  background-color: #E6E6CA;
+  font-family: 'Courier New', Courier, monospace;
+  background-image: url(Veg-Background.jpg) ;
+  background-size: cover;
+  background-position: none;
+  background-repeat: no-repeat;
+}
+
+.homebody {
+  background-color: #E6E6CA;
+  font-family: 'Courier New', Courier, monospace;
+  background-image: none;
+}
+
+footer{
+  display: flex;
+  text-align: center;
+  text-decoration: none;
+  list-style: none;
+}
+
+.footer-anchor{
+  justify-content: center;
+ 
+}
+nav {
+  height: 15vh;
+  width: 100%;
+  background-color: #77DF79;
+  position: relative;
+  display: flex;
+}
+
+.nav-anchor{
+  color: #008C76FF;
+  
+}
+
+#title{
+  flex-wrap: wrap;
+ margin-left:30% ;
+ position: relative;
+ height: 10vh;
+ font-size: 30px;
+ font-family:  'Courier New', Courier, monospace;
+ z-index: 2;
+}
+
+.hamburger{
+position: absolute;
 cursor: pointer;  
 right: 5%;
 top: 50%;
@@ -33,8 +85,9 @@ z-index: 2;
   background: #E6E6CA;  
   margin: 5px;
 }
+
 .nav-links {
-  display:none;  /* currently disabled due to unknown issue with toggle off*/
+  display: none ;  /* currently disabled due to unknown issue with toggle off*/
   list-style: none; 
   background: #77DF79;
   text-decoration: none;
@@ -45,14 +98,16 @@ z-index: 2;
   margin-left: auto;
   position: fixed;
   flex-direction: column;
-  clip-path: circle(2000px at 90% -10%);
-  -webkit-clip-path: circle(2000px at 90% -10%);
+  clip-path: circle(500px at 90% -10%);
+  -webkit-clip-path: circle(500px at 90% -10%);
   transition: all 1s ease-out;
 }
+
 .nav-links.open {
-  clip-path: circle(2000px at 90% -10%);
-  -webkit-clip-path: circle(2000px at 90% -10%);
+  clip-path: circle(500px at 90% -10%);
+  -webkit-clip-path: circle(500px at 90% -10%);
 }
+
 .nav-list{
   font-size: 16px;
 }
@@ -60,40 +115,239 @@ z-index: 2;
 .nav-list:nth-child(1){
 transition:  all 0.5s ease .2s;
 }
+
 .nav-list:nth-child(2){
   transition:  all 0.5s ease .3s
 }
+
 .nav-list:nth-child(3){
   transition:  all 0.5s ease .4s
 }
+
 .nav-list:nth-child(4){
   transition:  all 0.5s ease .5s
 }
+
 .nav-list:nth-child(5){
   transition:  all 0.5s ease .6s
 }
+
+
+
+
+/*Home Page Style*/
+
 .home{
   display: flex;
   flex-direction: column;
   text-align: center;
   justify-content: center;
-  align-self: center;
+  align-items: center;
   
 }
-
 #pageAnchor1{
   text-decoration: none;
   color:  #44D362;
   transition: 1s;
 }
+
 #pageAnchor1:hover{
   font-size: 50px;
  }
+
 #pageAnchor2{
   text-decoration: none;
-  color:  #E6B9A1;
-  transition: 1s;
+  color:  #44D362;
+  transition: 1.5s;
+  background-color: #98E690(0.5);
+  border-radius: 50%;
+  padding: 15px 15px 15px;
 }
+
+#pageAnchor2:hover{
+  font-size: 50px;
+}
+
+.home-item-1{
+  height: 100%;
+  width: 700px;
+  border-radius: 50%;
+  border-style: solid;
+  border-width: 2px;
+  background-color: rgba(255, 255, 255, 0.7) ;
+  padding: 10% 0px 10% 0px;
+  margin-top: 150px;
+ 
+ 
+}
+
+.home-item-2{
+  height: 100%;
+  width: 700px;
+  border-radius: 50%;
+  border-style: solid;
+  border-width: 2px;
+  background-color: rgba(255, 255, 255, 0.7) ;
+  padding: 10% 0px 10% 0px;
+  margin-top: 150px;
+}
+
+h2{
+  justify-content: center;
+  align-items: center;
+ 
+}
+
+p{
+  padding: 0% 40% 0% 40%;
+}
+
+
+
+/*Pantry Page Style*/
+
+.pantry{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 220px;
+}
+
+.pantry-items{
+  flex-wrap: wrap;
+  font-size: 50px;
+
+}
+
+.pantry-list{
+  padding: 0;
+  margin: 0;
+  clear: both;
+}
+
+.btn-group{
+ margin-top: 5px
+}
+
+.button {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #DFA995;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+  margin-top: 15px;
+}
+
+.button:hover {background-color: #3e8e41}
+
+.button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+
+/* Log IN Page */
+
+
+ /* Bordered form */
+ form {
+  border: 3px solid #f1f1f1;
+  margin: 10% 20% 20% 20%;
+  background-color: rgba(255, 255, 255, 0.7);
+  
+}
+
+/* Full-width inputs */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 25px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+/* Add a hover effect for buttons */
+button:hover {
+  background-color:#77DF79  ;
+}
+
+/* Extra style for the cancel button (red) */
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #DFA995;
+}
+
+
+
+/* Add padding to containers */
+.container {
+  padding: 16px;
+}
+
+/* The "Forgot password" text */
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+    display: block;
+    float: none;
+    }
+  .cancelbtn {
+    width: 100%;
+  }
+} 
+
+footer{
+  display: flex;
+  justify-content: center;
+  height: 10vh;
+  text-align: center;
+  text-decoration: none;
+  list-style: none;
+}
+a.footer-anchor{
+  text-decoration: none;
+  list-style: none;
+}
+
+
+
+
+
+
+/*colors
+DARK PINK: #DFA995
+LIGHT PINK: #E6B9A1
+GRAY?: #E6E6CA
+LIGHT GREEN: #98E690
+MEDIUM GREEN: #77DF79  
+DARK GREEN: #44D362 
+*/
 #pageAnchor2:hover{
   font-size: 50px;
  }
