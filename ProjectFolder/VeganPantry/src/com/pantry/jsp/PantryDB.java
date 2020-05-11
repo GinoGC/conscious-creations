@@ -3,20 +3,13 @@ import java.sql.*;
 
 public class PantryDB{
 	  
-	  private String url;
+	  private String url; //URL for database connection
 	  private String username;
 	  private String pass;
 	         
 	    
 	  
 	  
-	  
-	  
-	  
-	  
-	  
-	  
-
 	  
 	  // This method adds a new user to the database. It should search for the users email in the database. If 
 	  //the email already exists, the user will be prompted to login to their existing account. If the email
@@ -51,7 +44,7 @@ public class PantryDB{
 	       } catch (SQLException e) { 
 	         System.out.println("addUser Failed to Execute");
 	         e.printStackTrace();
-	       }
+	       } 
 	    }
 	 
 	  

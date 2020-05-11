@@ -48,7 +48,7 @@ public class UserBL {
 public class UserDAO {
     public User getUserFromCredentials(String username, String password) {
         //probably a query
-        Connection con = null;
+        Connection conn = null;
         PreparedStatement pstmt = null;
         ResultSet rs = null;
         User user = null;

@@ -1,5 +1,5 @@
 package com.pantry.jsp;
-import java.sql.*;
+//import java.sql.*;
 
 
 //This is a testing ground for the Vegan Pantry app
