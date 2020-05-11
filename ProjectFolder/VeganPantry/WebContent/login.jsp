@@ -12,24 +12,19 @@
   <link href="style.css" rel="stylesheet" type="text/css">
 </head>
 <body id="login-body">  
-<form action="action_page.php" method="post">   
-  <div class="container">
-    <label for="username"><b>Email</b></label>
-    <input type="text" placeholder="Enter Email" name="username" required>
 
-    <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="psw" required>
 
-    <button type="submit">Login</button>
-    <label>
-      <input type="checkbox" checked="checked" name="remember"> Remember me
-    </label>
-  </div>
-  <div class="container" style="background-color:#f1f1f1">
-    <button type="button" class="cancelbtn">Cancel</button>
-    <span class="psw">Forgot <a href="#">password?</a></span>
-  </div>
-</form> 
+<!--  	This is where the PantryDB methods will 
+		be called to process the data
+		
+		It will look something like:
+		DBPantry.addUser(input.email,input.password);
+		
+		<p> This email is already ...</p>
+-->
+
+
+
 </body>
 <footer>  
   <div class="footer">
