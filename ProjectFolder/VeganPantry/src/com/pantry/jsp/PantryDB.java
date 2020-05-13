@@ -11,61 +11,78 @@ public class PantryDB{
 	  
 	  
 	  
-	  // This method adds a new user to the database. It should search for the users email in the database. If 
-	  //the email already exists, the user will be prompted to login to their existing account. If the email
-	  //does not already exist, the user will be added to the database.
-	  public void addUser(String email, String username) throws Exception {
-	       try{
-	         
-	         //calls getConnection method to establish connection to MySQL server
-	         Connection conn = getConnection();
-	         
-	         String checkExists = "SELECT * From users WHERE email = '" + email + "';";
-	         
-	         if(rowExists(checkExists)) {
-	        	 
-	        	 //This executes if there is already a user with the specified email in the database.
-	        	 //There should be code here which would ask if the user forgot there username or password
-	             return;
-
-	         }
-	         
-	         else {
-	        	//this next line executes the SQL code within the quotes using connector J
-		         PreparedStatement stmt = conn.prepareStatement("INSERT INTO Users(email, username)" +
-		                                                             "VALUES('" + email + "', '" + username + "')");
-		         stmt.executeUpdate();
-	         }
-	         
-	         
-	         
-	    
-	         System.out.println("addUser Executed Successfully");
-	       } catch (SQLException e) { 
-	         System.out.println("addUser Failed to Execute");
-	         e.printStackTrace();
-	       } 
+	  
+	  
+	  
+	  
+	  
+	  
+	  // This method adds a new user to the database after making sure they aren't already in the database.
+	  public String addUser(String email) throws Exception {
+	       
+		  PreparedStatement stmt = null;
+		  String output = null;
+		  
+		  if(email == null) {
+			  output = "cannot be null";
+		  }
+		  
+		  else {
+			  try{
+			         
+			         //calls getConnection method to establish connection to MySQL server
+			         Connection conn = getConnection();
+			         
+			         String checkExists = "SELECT * From users WHERE email = '" + email + "';";
+			         
+			         if(rowExists(checkExists, conn)) {
+			        	 
+			        	 //This executes if there is already a user with the specified email in the database.
+			        	 //There should be code here which would ask if the user forgot there username or password
+			        	 output = "User already exists. [Reset password?]";
+			         }
+			         
+			         else {
+			        	//this next line executes the SQL code within the quotes using connector J
+				         stmt = conn.prepareStatement("INSERT INTO Users(email)" +
+				                                                             "VALUES('" + email + "')");
+				         stmt.executeUpdate();
+				         output = "User has been added :D";
+			         }
+			         System.out.println("addUser Executed Successfully");
+			         
+			         
+			       } catch (SQLException e) { 
+			         System.out.println("addUser Failed to Execute");
+			         e.printStackTrace();
+			       } finally {
+			           if (stmt != null) {
+			               stmt.close();
+			               }	          
+			           } 
+		  } return output;
 	    }
 	 
 	  
 	  
 	  
 	  //Checks whether a specific acrow exists in a database or not
-	  public boolean rowExists(String query) throws Exception{
+	  public boolean rowExists(String query, Connection conn) throws Exception{
 		  
 		  boolean exists = false;
+		  PreparedStatement pstmt = null;
 		  
 		  try{
 		         
 		         //calls getConnection method to establish connection to MySQL server
-		         Connection conn = getConnection();
+		         //Connection conn = getConnection();
 		         
 		         
 		         
-		         PreparedStatement pstmt = conn.prepareStatement(query);
+		         pstmt = conn.prepareStatement(query);
 		         ResultSet rs = pstmt.executeQuery();
 		         if(rs.next()) {
-		        	 System.out.println("User already exists");
+		        	 System.out.println("already exists");
 		        	 exists = true;
 		        	 return exists;
 		        	 }
@@ -74,7 +91,11 @@ public class PantryDB{
 		       } catch (SQLException e) { 
 		         System.out.println("rowExists Failed to Execute");
 		         e.printStackTrace();
-		       }
+		       } finally {
+		           if (pstmt != null) {
+		               pstmt.close();
+		               }	          
+		           }
 		  return exists;
 	  }
 	  

@@ -1,5 +1,5 @@
 package com.pantry.servlet;
-import org.apache.tomcat.jni.User;
+//import org.apache.tomcat.jni.User;
 import java.io.IOException;
 import java.io.PrintWriter;
 
@@ -8,6 +8,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import com.pantry.jsp.PantryDB;
 
 /**
  * Servlet implementation class LoginServlet
@@ -39,19 +41,39 @@ public class LoginServlet extends HttpServlet {
 	
 	
 	
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		
-		//Step 1: set the content type
+		//Step 1: set the content type and create db connection/////////////////////////////////////////////////////////////
 		response.setContentType("text/html");
-		
-		//Step 2: get the printwriter
+
+		 
+		//Step 2: get the printwriter and dbConnection///////////////////////////////////////////////////////////////////////////////////////
 		PrintWriter out = response.getWriter();
 		
-		//Step 3: generate HTML content
-		//login.jsp will be used to handle login.html
-		//login servlet will do all the implementing
+		//parameters to be passed to the PantryDB object
+		String dbURL = "jdbc:mysql://localhost:3306/VeganPantry";
+		String dbUsername = "root";
+		String dbPass = "H3ll@D@t@2020";
+		PantryDB connection = new PantryDB(dbURL, dbUsername, dbPass);
 		
+		//login.html supplies the email and password
+		String inputEmail = request.getParameter("username");
+		String output = null;
+		try {
+			output = connection.addUser(inputEmail);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
+		//Step 3: generate HTML content/////////////////////////////////////////////////////////////////////////////////////
+		
+		out.println("<html><body>");
+
+		out.println("");
+		out.println("Input email value = " + inputEmail);
+		out.println("<br><br>");
+		out.println(output);
 		
 		out.println("</html></body>");
 	}
