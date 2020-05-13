@@ -2,8 +2,344 @@
 body {
   background-color: #E6E6CA;
   font-family: 'Courier New', Courier, monospace;
+  margin: 0;
+  padding: 0;
 }
 
+body ::-webkit-scrollbar {
+  width: 0.25rem;
+}
+body ::-webkit-scrollbar-track {
+background: black;
+}
+
+body ::-webkit-scrollbar-thumb {
+background: fuchsia;
+}
+
+main {
+  margin-left: 5rem;
+ padding: 1rem; 
+}
+.navbar{
+    width: 5rem;  
+    height: 100vh;
+    position: fixed;
+    background-color: #44D362;
+  }
+
+  .navbar-nav{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+.nav-link{
+  width: 100%;
+  list-style: none;
+  text-decoration: none;
+  color: white;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 2rem;
+}
+
+.nav-icons{
+  align-items: center;
+  justify-content: space-around;
+}
+
+.nav-span{
+  font-size: .95rem;
+  margin-top: 4px;
+}
+
+@media screen and (max-width:640px){
+  .navbar{
+    width: 100vw;
+    height: 5rem;
+    display: flex;
+    flex-direction: row;
+    bottom: 0;
+  }
+.nav-link{
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 2rem;
+  
+  }
+
+.nav-icon{
+  flex-direction: row;
+  align-items: center;
+  width: 2em;
+}
+
+.nav-span{
+  flex-direction: row;
+  align-items: center;
+  margin-left: -2rem;  
+  display: none;
+}
+
+
+
+footer{
+  display: flex;
+  text-align: center;
+}
+
+.footer-anchor{
+  justify-content: center;
+  text-decoration: none;
+  list-style: none;
+  color: white;
+}
+footer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 25vh;
+  width: 100vw;
+  margin-top: 25vh;
+  background-color: #44D36290;
+}
+ul{
+  list-style-type: none;
+  padding: 0% 10% 10% 10%;
+  color: white;
+}
+
+#footerHeader{
+  color: white;
+  font-size: 25px;
+}
+
+#assets {
+  font-size: 10px;
+}
+
+/*HOMEPAGE STYLE*/
+
+.home{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+}
+#pageAnchor1{
+  text-decoration: none;
+  color:  #44D362;
+  transition: 1s;
+}
+
+#pageAnchor1:hover{
+  font-size: 50px;
+ }
+
+#pageAnchor2{
+  text-decoration: none;
+  color:  #44D362;
+  transition: 1.5s;
+  background-color: #98E690(0.5);
+}
+
+#pageAnchor2:hover{
+  font-size: 50px;
+}
+
+.home-item-1{
+  width: 100vw;
+  height: 100%;
+  margin-top: 8rem;
+}
+
+.home-item-2{
+  height: 100%;
+  width: 100vw;
+
+}
+
+h2{
+  justify-content: center;
+  align-items: center;
+ 
+}
+
+p{
+  padding: 0% 30% 0% 30%;
+}
+
+
+
+/*PANTRY STYLE PAGE*/
+
+.pantry{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pantry-items{
+  flex-wrap: wrap;
+}
+
+.pantry-list{
+  padding: 0;
+  margin: 0;
+  clear: both;
+}
+
+
+.button {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #DFA995;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+  margin-top: 15px;
+}
+
+.button:hover {background-color: #3e8e41}
+
+.button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+@media screen and (max-width:700px){
+  .button{
+    font-size: 14px;
+    padding: 15px 15px;
+    flex: 1;
+    width: 150px;
+    transition: ease-in-out;
+  }  
+  #pantryHeader{
+    text-align: center;
+  }
+}
+
+/* Log IN Page */
+
+
+ /* Bordered form */
+ form {
+  border: 3px solid #f1f1f1;
+  margin: 10% 10% 5% 10%;
+  background-color: rgba(255, 255, 255, 0.7);
+  
+}
+
+/* Full-width inputs */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 25px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+/* Add a hover effect for buttons */
+button:hover {
+  background-color:#77DF79  ;
+}
+
+/* Extra style for the cancel button (red) */
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #DFA995;
+}
+
+
+
+/* Add padding to containers */
+.container {
+  padding: 16px;
+}
+
+
+/* The "Forgot password" text */
+span.psw {
+  float: right;
+  padding: 16px;
+}
+span.usr{
+  float: right;
+  padding: 16px;
+}
+
+#signupbtn{
+  list-style: none; 
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 14px 55px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  transition: .3s;
+}
+#signupbtn:hover{
+  color: #4CAF50 ;
+  font-size: 20px;
+
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 700px) {
+  span.psw {
+    display: block;
+    float: none;
+    font-size: 12px;
+    padding: 5px;
+    }
+    span.usr{
+      display: block;
+      font-size: 12px;
+      float: none;
+      padding: 5px;
+    }
+  .cancelbtn {
+    width: 100%;
+  }
+  #signupbtn{
+    display: block;
+    text-align: center;
+    padding: 3px 5px;
+    margin: 4px 0;
+  
+  }
+} 
 #loginBody{
   background-image: url(Veg-Background.jpg) ;
   background-size: cover;
@@ -11,33 +347,34 @@ body {
   background-repeat: no-repeat;
 }
 
-nav {
-  height: 10vh;
-  width: 150%;
-  background-color: #77DF79  ;
+/*RECIPE PAGE*/
+
+.column{
   display: flex;
-  margin: -8px -15px;
-  position: fixed;
+  flex-direction: column;
 }
+ .card{
+   background-color: white;
+  text-align: center;
+   align-items: center;
+  border: solid;
+  padding: 10px 10px 10px 10px ;
+  margin: 25px 25px 25px 25px;
+ }
 
 
-.nav-icons{
-  size: 10px;
-  font-size: 10px;
-  height: 30px;
-  transition: ease-in-out .5s;
-justify-content: center;
 
-}
 
-.nav-icons:hover{
-  height: 40px;
- 
-}
 
-.nav {
-  color: #008C76FF;
-  flex-direction: column ;
+
+/*colors
+DARK PINK: #DFA995
+LIGHT PINK: #E6B9A1
+GRAY?: #E6E6CA
+LIGHT GREEN: #98E690
+MEDIUM GREEN: #77DF79  
+DARK GREEN: #44D362 
+*/
   columns: 3; 
 }
 
