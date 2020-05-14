@@ -1,26 +1,20 @@
 
-  /*ALL PAGE STYLE*/
+ /*ALL PAGE STYLE*/
 body {
-  background-color: #E6E6CA;
+  background-image: linear-gradient(to bottom right, #98E690, #E6B9A1);
+  background-repeat: no-repeat;
+  background-size: 100vw 100vh;
+  background-attachment: fixed;
   font-family: 'Courier New', Courier, monospace;
   margin: 0;
   padding: 0;
 }
 
-body ::-webkit-scrollbar {
-  width: 0.25rem;
-}
-body ::-webkit-scrollbar-track {
-background: black;
-}
-
-body ::-webkit-scrollbar-thumb {
-background: fuchsia;
-}
 
 main {
   margin-left: 5rem;
- padding: 1rem; 
+  padding: 0rem; 
+  
 }
 .navbar{
     width: 5rem;  
@@ -59,7 +53,10 @@ main {
   margin-top: 4px;
 }
 
-@media screen and (max-width:640px){
+@media screen and (max-width:600px){
+  main{ 
+    margin: 0 0;
+  }
   .navbar{
     width: 100vw;
     height: 5rem;
@@ -95,14 +92,15 @@ main {
   display: flex;
   flex-direction: column;
   text-align: center;
-  justify-content: center;
-  align-items: center;
   width: 100vw;
+  margin-left: 5rem;
+  
 }
 #pageAnchor1{
   text-decoration: none;
   color:  #44D362;
   transition: 1s;
+ 
 }
 
 #pageAnchor1:hover{
@@ -113,33 +111,68 @@ main {
   text-decoration: none;
   color:  #44D362;
   transition: 1.5s;
-  background-color: #98E690(0.5);
 }
 
 #pageAnchor2:hover{
   font-size: 50px;
 }
 
-.home-item-1{
+.home-item{
   width: 100vw;
-  height: 100%;
-  margin-top: 8rem;
+  height: 40vh;
+ margin: 2rem 3rem; 
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(255, 255,255,.5);
+  border-radius: 50px;
 }
 
-.home-item-2{
-  height: 100%;
+
+.home-p{
   width: 100vw;
-
-}
-
-h2{
+  flex-direction: column;
   justify-content: center;
   align-items: center;
- 
 }
 
-p{
-  padding: 0% 30% 0% 30%;
+@media screen and (max-width:600px){
+  .home{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 100vw;
+    margin-left: 0;
+  }
+  #pageAnchor1{
+    text-decoration: none;
+    color:  #44D362;
+    transition: 1s;
+  }
+  #pageAnchor1:hover{
+    font-size: 50px;
+   }
+  #pageAnchor2{
+    text-decoration: none;
+    color:  #44D362;
+    transition: 1.5s;
+  }
+  #pageAnchor2:hover{
+    font-size: 50px;
+  }
+  .home-item{
+    width: 100vw;
+    height: 30vh;
+    margin-top: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .home-p{
+    width: 70vw;
+    padding: 1rem .5rem;
+    
+  }
 }
 
 
@@ -150,18 +183,17 @@ p{
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  margin-left: 3rem;
+  margin-right: 3rem;
+  width: 95vw;
+  
 }
 
 .pantry-items{
   flex-wrap: wrap;
+  display: flex;
 }
-
-.pantry-list{
-  padding: 0;
-  margin: 0;
-  clear: both;
-}
-
 
 .button {
   display: inline-block;
@@ -187,7 +219,7 @@ p{
   transform: translateY(4px);
 }
 
-@media screen and (max-width:700px){
+@media screen and (max-width:600px){
   .button{
     font-size: 14px;
     padding: 15px 15px;
@@ -281,7 +313,7 @@ span.usr{
 }
 
 /* Change styles for span and cancel button on extra small screens */
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 600px) {
   span.psw {
     display: block;
     float: none;
