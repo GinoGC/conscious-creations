@@ -1,5 +1,5 @@
 package com.pantry.servlet;
-//import org.apache.tomcat.jni.User;
+
 import java.io.IOException;
 import java.io.PrintWriter;
 
@@ -12,16 +12,16 @@ import javax.servlet.http.HttpServletResponse;
 import com.pantry.jsp.PantryDB;
 
 /**
- * Servlet implementation class LoginServlet
+ * Servlet implementation class SignUpServlet
  */
-@WebServlet("/LoginServlet")
-public class LoginServlet extends HttpServlet {
+@WebServlet("/SignUpServlet")
+public class SignUpServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public LoginServlet() {
+    public SignUpServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -37,11 +37,7 @@ public class LoginServlet extends HttpServlet {
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
-	
-	
-	
-	
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		
 		//Step 1: set the content type and create db connection/////////////////////////////////////////////////////////////
 		response.setContentType("text/html");
@@ -69,8 +65,7 @@ public class LoginServlet extends HttpServlet {
 		}
 		
 		
-		
-		
+
 		//Step 3: generate HTML content/////////////////////////////////////////////////////////////////////////////////////
 		
 		out.println("<html><body>");

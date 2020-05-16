@@ -1,5 +1,11 @@
 package com.pantry.jsp;
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import java.util.Arrays;
 
 public class PantryDB{
 	  
@@ -9,39 +15,41 @@ public class PantryDB{
 	         
 	    
 	  
-	  
-	  
-	  public boolean authenticate(String email, String pass) throws Exception{
+	    
+	  public boolean authenticate(String inputEmail, String inputPass) throws Exception{
 		  PreparedStatement pstmt = null;
 		  String userPass = null;
 		  boolean authenticated = false;
 		  
-		  if(email == null) {
+		  
+		  //if null value entered for email
+		  if(inputEmail == null) {
 			  System.out.println("email cannot be null");
 		  }
+		  
+		  //if a value other than null is entered for email
 		  else {
 			  try{
-				//calls getConnection method to establish connection to MySQL server
-			      
-				 
+				
+				  
+				  //calls getConnection method to establish connection to MySQL server
 				  Connection conn = getConnection();
 			         
-			      String selectQuery = "SELECT * From users WHERE email = '" + email + "';";
+			      String selectQuery = "SELECT * From users WHERE email = '" + inputEmail + "';";
 			         
+			      //if an entry exists for the given email
 			      if(checkExists(selectQuery, conn)) {
 			        	 pstmt = conn.prepareStatement(selectQuery);
 			        	 ResultSet rs = pstmt.executeQuery();
 				         
-			        	 if(rs.next()) {
-			        		 userPass = rs.getString("passwd");
-			        		 System.out.println(userPass);
-			        		 if(userPass == pass) {
-				        		 
-					        		authenticated = true; 
-					        	 }
-			        	 }
-			        	 
-			        	 
+			        	 //returns users password form database
+			        	 userPass = getValue(rs, "passwd");
+
+			    		 
+			             //determines if the entered password matches the database password for the user
+			             if (inputPass.equals(userPass)) { 
+			            	 authenticated = true;
+			             }
 
 			      }
 			  
@@ -49,8 +57,8 @@ public class PantryDB{
 			      else {//executes if no user is found with the entered email address
 			        	
 			    	  System.out.println("Invalid email or password"); 
-			    	  return authenticated;
-			         }
+			         
+			      }
 			         //System.out.println("addUser Executed Successfully");
 			         
 			         
@@ -66,6 +74,19 @@ public class PantryDB{
 		  return authenticated;
 	  }
 	  
+	  
+	  
+	  
+	  //accepts a result set and column name as parameters and returns a single value
+	  public String getValue(ResultSet rs, String column) throws Exception{
+		  String pass = null;
+		  
+		  if(rs.next()) {
+			  
+			  pass = rs.getString(column);
+		  }
+		  return pass;
+	  }
 	  
 	  
 	  
@@ -181,6 +202,15 @@ public class PantryDB{
 	    this.url = url;
 	    this.username = username;
 	    this.pass = pass;
+	  }
+	  
+	  
+	  
+	// overloaded constructor method which auto initializes to VeganPantry Database
+	  public PantryDB(){
+	    this.url = "jdbc:mysql://localhost:3306/VeganPantry";
+	    this.username = "root";
+	    this.pass = "H3ll@D@t@2020";
 	  }
 	  
 	  

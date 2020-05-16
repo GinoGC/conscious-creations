@@ -1,5 +1,5 @@
 package com.pantry.jsp;
-//import java.sql.*;
+
 
 
 //This is a testing ground for the Vegan Pantry app
@@ -22,12 +22,12 @@ public class Sandbox{
 		 //user email and username String
 		 String email = "gino@CC.com";
 		 String password = "HelloWorld";
-		 
+
 		 
 		 //test methods
 		 boolean methodOutput = connection.authenticate(email, password);
 		 System.out.println(methodOutput);
-		 
+
 		}
 	
 }
