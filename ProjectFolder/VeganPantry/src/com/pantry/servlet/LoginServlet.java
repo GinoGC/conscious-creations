@@ -51,18 +51,21 @@ public class LoginServlet extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		
 		
-		//parameters to be passed to the PantryDB object
+		/*parameters to be passed to the PantryDB object
 		String dbURL = "jdbc:mysql://localhost:3306/VeganPantry";
 		String dbUsername = "root";
-		String dbPass = "H3ll@D@t@2020";
-		PantryDB connection = new PantryDB(dbURL, dbUsername, dbPass);
+		String dbPass = "H3ll@D@t@2020";*/
 		
+		
+		//DBPantry constructor overloaded to default into VeganPantry database 
+		PantryDB connection = new PantryDB();
 		
 		//login.html supplies the email and password
 		String inputEmail = request.getParameter("email");
-		String output = null;
+		String inputPass = request.getParameter("passwd");
+		boolean userAuthenticated = false;
 		try {
-			output = connection.addUser(inputEmail);
+			userAuthenticated = connection.authenticate(inputEmail, inputPass);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -73,12 +76,24 @@ public class LoginServlet extends HttpServlet {
 		
 		//Step 3: generate HTML content/////////////////////////////////////////////////////////////////////////////////////
 		
+		
+		if(userAuthenticated) {
+			
+			//home.html
+		}
+		
+		else {
+			//invalid email or password message on login page
+		}
+		
+		
+		
 		out.println("<html><body>");
 
 		out.println("");
 		out.println("Input email value = " + inputEmail);
 		out.println("<br><br>");
-		out.println(output);
+		out.println(userAuthenticated);
 		
 		out.println("</html></body>");
 	}
