@@ -1,5 +1,5 @@
 
- /*ALL PAGE STYLE*/
+/*ALL PAGE STYLE*/
 body {
   background-image: linear-gradient(to bottom right, #98E690, #E6B9A1);
   background-repeat: no-repeat;
@@ -12,9 +12,9 @@ body {
 
 
 main {
-  margin-left: 5rem;
   padding: 0rem; 
-  
+  width: 100vw;
+  margin-left: 5rem;
 }
 .navbar{
     width: 5rem;  
@@ -93,14 +93,14 @@ main {
   flex-direction: column;
   text-align: center;
   width: 100vw;
-  margin-left: 5rem;
+  
   
 }
 #pageAnchor1{
   text-decoration: none;
   color:  #44D362;
   transition: 1s;
- 
+  text-shadow: 2px 2px 4px #000000;
 }
 
 #pageAnchor1:hover{
@@ -111,6 +111,7 @@ main {
   text-decoration: none;
   color:  #44D362;
   transition: 1.5s;
+  text-shadow: 2px 2px 4px #000000;
 }
 
 #pageAnchor2:hover{
@@ -125,6 +126,7 @@ main {
   flex-direction: column;
   background-color: rgba(255, 255,255,.5);
   border-radius: 50px;
+  box-shadow: 10px 10px 5px grey;
 }
 
 
@@ -187,9 +189,12 @@ main {
   margin-left: 3rem;
   margin-right: 3rem;
   width: 95vw;
-  
 }
-
+.pantryHeader{
+  color:  #44D362;
+  transition: 1.5s;
+  text-shadow: 2px 2px 4px #ffffff;
+}
 .pantry-items{
   flex-wrap: wrap;
   display: flex;
@@ -211,7 +216,8 @@ main {
   margin-top: 15px;
 }
 
-.button:hover {background-color: #3e8e41}
+.button:hover {
+  background-color: linear-gradient(to #3e8e41,#DFA995)}
 
 .button:active {
   background-color: #3e8e41;
@@ -227,8 +233,11 @@ main {
     width: 150px;
     transition: ease-in-out;
   }  
-  #pantryHeader{
+  .pantryHeader {
     text-align: center;
+    color:  #44D362;
+    transition: 1.5s;
+    text-shadow: 2px 2px 4px #ffffff;
   }
 }
 
@@ -238,9 +247,10 @@ main {
  /* Bordered form */
  form {
   border: 3px solid #f1f1f1;
-  margin: 10% 10% 5% 10%;
+  margin: 0 20% 5% 20%;
   background-color: rgba(255, 255, 255, 0.7);
-}
+ }
+
 
 /* Full-width inputs */
 input[type=text], input[type=password] {
@@ -336,6 +346,10 @@ span.usr{
     margin: 4px 0;
   
   }
+
+  form{
+    margin-top: 10%;
+  }
 } 
 #loginBody{
   background-image: url(Veg-Background.jpg) ;
@@ -351,10 +365,10 @@ span.usr{
   flex-direction: column;
 }
  .card{
-   background-color: white;
+   background-color: rgba(255, 255, 255, 0.5);
   text-align: center;
    align-items: center;
-  border: solid;
+   box-shadow: 10px 10px 5px grey;
   padding: 10px 10px 10px 10px ;
   margin: 25px 25px 25px 25px;
  }
