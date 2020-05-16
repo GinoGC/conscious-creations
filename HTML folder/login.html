@@ -26,28 +26,28 @@
    </a>
 </nav>
 </header>
-<body id= 'loginBody'>  
-<form action="LoginServlet" method="post">   
-  <div class="container">
-    <label for="username"><b>Email</b></label>
-    <input type="text" placeholder="Enter Email" name="email" required>
-
-    <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="passwd" required>
-
-    <button type="submit">Login</button>
-    <label>
-      <input type="checkbox" checked="checked" name="remember"> Remember me
-    </label>
+<body id= 'loginBody'> 
+  <div  class='form'>
+    <form action="action_page.php" method="post">   
+      <div class="container">
+        <label for="username"><b>Email</b></label>
+        <input type="text" placeholder="Enter Email" name="email" required>
+        <label for="psw"><b>Password</b></label>
+         <input type="password" placeholder="Enter Password" name="passwd" required>
+          <button type="submit">Login</button>
+        <label>
+        <input type="checkbox" checked="checked" name="remember"> Remember me
+        </label>
+      </div>
+      <div class="container" style="background-color:#f1f1f1">
+        <button type="button" class="cancelbtn">Cancel</button>
+        <span class="psw">Forgot <a href="#">password?</a></span>
+        <span class="usr">Forgot <a href="#">username?</a></span>
+      </div>
+      <div class='signup'>
+        <p><a id="signupbtn" href="signup.html">Sign Up</p></a>
+      </div>
+    </form> 
   </div>
-  <div class="container" style="background-color:#f1f1f1">
-    <button type="button" class="cancelbtn">Cancel</button>
-    <span class="psw">Forgot <a href="#">password?</a></span>
-    <span class="usr">Forgot <a href="#">username?</a></span>
-  </div>
-  <div class='signup'>
-    <p><a id="signupbtn" href="signup.html">Sign Up</p></a>
-  </div>
-</form> 
 </body>
 </html>
