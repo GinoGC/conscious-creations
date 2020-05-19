@@ -14,7 +14,7 @@ public class Sandbox{
 		 String dbPass = "H3ll@D@t@2020";
 		 
 		 //creating new PantryDB object with the created parameters named connection
-		 PantryDB connection = new PantryDB(dbURL, dbUsername, dbPass);
+		 PantryDB connection = new PantryDB(/*dbURL, dbUsername, dbPass*/);
 		 
 		 //create connection with newly created PantryDB object
 		 //connection.getConnection();

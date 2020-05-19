@@ -20,6 +20,7 @@ public class PantryDB{
 		  PreparedStatement pstmt = null;
 		  String userPass = null;
 		  boolean authenticated = false;
+		  Connection conn = null;
 		  
 		  
 		  //if null value entered for email
@@ -33,7 +34,7 @@ public class PantryDB{
 				
 				  
 				  //calls getConnection method to establish connection to MySQL server
-				  Connection conn = getConnection();
+				  conn = getConnection();
 			         
 			      String selectQuery = "SELECT * From users WHERE email = '" + inputEmail + "';";
 			         
@@ -66,9 +67,17 @@ public class PantryDB{
 			         System.out.println("addUser Failed to Execute");
 			         e.printStackTrace();
 			         } finally {
-			           if (pstmt != null) {
-			               pstmt.close();
-			               }	          
+			        	 try {
+			        		 if (pstmt != null) {
+			        			 pstmt.close();
+			        		 }	 
+			        		 if (conn !=null) {
+			        			 conn.close();
+			        		 }
+			        	 }	
+			        	 catch(SQLException e){
+			        		 e.printStackTrace();
+			        	 }
 			           } 
 			  }
 		  return authenticated;
@@ -96,6 +105,7 @@ public class PantryDB{
 	       
 		  PreparedStatement stmt = null;
 		  String output = null;
+		  Connection conn = null;
 		  
 		  if(email == null) {
 			  output = "cannot be null";
@@ -105,7 +115,7 @@ public class PantryDB{
 			  try{
 			         
 			         //calls getConnection method to establish connection to MySQL server
-			         Connection conn = getConnection();
+			         conn = getConnection();
 			         
 			         String selectQuery = "SELECT * From users WHERE email = '" + email + "';";
 			         
@@ -130,9 +140,17 @@ public class PantryDB{
 			         System.out.println("addUser Failed to Execute");
 			         e.printStackTrace();
 			       } finally {
-			           if (stmt != null) {
-			               stmt.close();
-			               }	          
+			        	 try {
+			        		 if (stmt != null) {
+			        			 stmt.close();
+			        		 }	 
+			        		 if (conn !=null) {
+			        			 conn.close();
+			        		 }
+			        	 }	
+			        	 catch(SQLException e){
+			        		 e.printStackTrace();
+			        	 }
 			           } 
 		  } return output;
 	    }
@@ -166,9 +184,14 @@ public class PantryDB{
 		         System.out.println("rowExists Failed to Execute");
 		         e.printStackTrace();
 		       } finally {
-		           if (pstmt != null) {
-		               pstmt.close();
-		               }	          
+		        	 try {
+		        		 if (pstmt != null) {
+		        			 pstmt.close();
+		        		 }	 
+		        	 }	
+		        	 catch(SQLException e){
+		        		 e.printStackTrace();
+		        	 }
 		           }
 		  return exists;
 	  }

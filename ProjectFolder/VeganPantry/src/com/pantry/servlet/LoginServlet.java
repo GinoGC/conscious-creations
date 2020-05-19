@@ -79,23 +79,30 @@ public class LoginServlet extends HttpServlet {
 		
 		if(userAuthenticated) {
 			
-			//home.html
+			out.println("<html><body>");
+
+			out.println("");
+			out.println("Input email value = " + inputEmail);
+			out.println("<br><br>");
+			out.println("The user has been authenticated: " + userAuthenticated);
+			
+			out.println("</html></body>");
 		}
 		
 		else {
-			//invalid email or password message on login page
+			out.println("<html><body>");
+
+			out.println("");
+			out.println("Input email value = " + inputEmail);
+			out.println("<br><br>");
+			out.println(userAuthenticated);
+			
+			out.println("</html></body>");
 		}
 		
 		
 		
-		out.println("<html><body>");
 
-		out.println("");
-		out.println("Input email value = " + inputEmail);
-		out.println("<br><br>");
-		out.println(userAuthenticated);
-		
-		out.println("</html></body>");
 	}
 
 }
