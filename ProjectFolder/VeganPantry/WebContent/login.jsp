@@ -48,7 +48,7 @@
     <span class="usr">Forgot <a href="#">username?</a></span>
   </div>
   <div class='signup'>
-    <p><a id="signupbtn" href="signup.html">Sign Up</p></a>
+    <p><a id="signupbtn" href="signup.html">Sign Up</a></p>
   </div>
 </form> 
 <%
