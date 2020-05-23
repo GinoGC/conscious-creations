@@ -1,61 +1,111 @@
-
 /*ALL PAGE STYLE*/
 body {
   background-image: linear-gradient(to bottom right, #98E690, #E6B9A1);
   background-repeat: no-repeat;
   background-size: 100vw 100vh;
-  background-attachment: fixed;
+  background-attachment:fixed ;
   font-family: 'Courier New', Courier, monospace;
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
 }
-
 
 main {
   padding: 0rem; 
-  width: 100vw;
+  width: 100%;
   margin-left: 5rem;
 }
+
 .navbar{
     width: 5rem;  
     height: 100vh;
     position: fixed;
     background-color: #44D362;
-  }
-
-  .navbar-nav{
+    display: flex;
     list-style-type: none;
     padding: 0;
     margin: 0;
-    display: flex;
     flex-direction: column;
     align-items: center;
+    transition: width 200ms ease;
   }
+
+.logo{
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  text-align: center;
+  letter-spacing: 0.3ch;
+  flex-direction: row-reverse;
+  display: flex;
+  height: 5rem;
+  width: 100%;
+}
+
+.logo img{
+  transform: rotate(0deg);
+  transition: 600ms;
+}
+
+.navbar:hover .logo img{
+  transform: rotate(-180deg);
+}
+
+.link-text{
+    font-size: 1.25rem;
+    margin-top: 1rem;
+    display: none;
+    margin-left: 1rem;
+  }
+
+.navbar:hover{
+  width:16rem;
+  margin-left: 0;
+}
+
+.navbar:hover .link-text{
+  display: block;
+}
+
+.link-text:hover{
+  color:#77DF79;
+}
+ #navbarLogIn{
+    margin-top: -10%;
+  }
+
 .nav-link{
   width: 100%;
+  height: 5rem;
   list-style: none;
   text-decoration: none;
   color: white;
-  justify-content: center;
   align-items: center;
   display: flex;
-  flex-direction: column;
-  padding-bottom: 2rem;
+  flex-direction: row;
+  padding-bottom: 1rem;
+  margin-left: 2rem;
 }
 
-.nav-icons{
-  align-items: center;
-  justify-content: space-around;
-}
-
-.nav-span{
-  font-size: .95rem;
-  margin-top: 4px;
+.nav-link:last-child{
+  margin-top: auto;
 }
 
 @media screen and (max-width:600px){
   main{ 
     margin: 0 0;
+    margin-bottom: 5rem;
+  }
+  .logo{
+    display: none;
+  }
+  .navbar:hover{
+    width:100vw;
+    margin-left: 0;
+  }
+  
+  .navbar:hover .link-text{
+    display: none;
   }
   .navbar{
     width: 100vw;
@@ -63,14 +113,23 @@ main {
     display: flex;
     flex-direction: row;
     bottom: 0;
+    margin: 0 0;
+    padding: 0 0;
   }
 .nav-link{
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: center;
   margin-top: 2rem;
-  
+  margin-right: 0;
+  margin-left: 0;
+  margin-bottom: 1rem;
   }
-
+  .nav-link:hover{
+    background-color: #77DF79;
+  }
+  .nav-link:last-child{
+    margin-top:2rem;
+  }
 .nav-icon{
   flex-direction: row;
   align-items: center;
@@ -82,6 +141,7 @@ main {
   align-items: center;
   margin-left: -2rem;  
   display: none;
+  
   }
 }
 
@@ -91,10 +151,7 @@ main {
 .home{
   display: flex;
   flex-direction: column;
-  text-align: center;
-  width: 100vw;
-  
-  
+  text-align: center;  
 }
 #pageAnchor1{
   text-decoration: none;
@@ -119,9 +176,9 @@ main {
 }
 
 .home-item{
-  width: 100vw;
+  width: 80vw;
   height: 40vh;
- margin: 2rem 3rem; 
+  margin: 2rem 0 2rem 2rem; 
   display: flex;
   flex-direction: column;
   background-color: rgba(255, 255,255,.5);
@@ -131,10 +188,13 @@ main {
 
 
 .home-p{
-  width: 100vw;
+  width: 60vw;
+  text-align: center;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 
 @media screen and (max-width:600px){
@@ -143,7 +203,8 @@ main {
     flex-direction: column;
     text-align: center;
     width: 100vw;
-    margin-left: 0;
+   margin-left: 5%;
+   margin-right: 5%;
   }
   #pageAnchor1{
     text-decoration: none;
@@ -162,16 +223,17 @@ main {
     font-size: 50px;
   }
   .home-item{
-    width: 100vw;
+    width: 80vw;
     height: 30vh;
     margin-top: 4rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+ 
   }
   .home-p{
-    width: 70vw;
+    width: 65vw;
     padding: 1rem .5rem;
     
   }
@@ -186,24 +248,34 @@ main {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-left: 3rem;
-  margin-right: 3rem;
-  width: 95vw;
+  margin-left: 2rem;
+  width: 100vw;
+  flex-wrap: wrap;
 }
 .pantryHeader{
   color:  #44D362;
   transition: 1.5s;
   text-shadow: 2px 2px 4px #ffffff;
+  margin-top: 2rem;
+  margin-bottom: -2rem;
 }
 .pantry-items{
   flex-wrap: wrap;
   display: flex;
+  flex: 1;
+  padding: 1rem 5rem;
+  
 }
-
+.btn-group{
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1;
+  margin: 1rem 1rem;
+}
 .button {
   display: inline-block;
   padding: 15px 25px;
-  font-size: 24px;
+  font-size: 16px;
   cursor: pointer;
   text-align: center;
   text-decoration: none;
@@ -213,7 +285,10 @@ main {
   border: none;
   border-radius: 15px;
   box-shadow: 0 9px #999;
-  margin-top: 15px;
+  margin: 1rem 1rem;
+  flex:1;
+  height: 5rem;
+  width: 10rem;
 }
 
 .button:hover {
@@ -226,18 +301,32 @@ main {
 }
 
 @media screen and (max-width:600px){
+  .pantry{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+
+  }
+
   .button{
     font-size: 14px;
-    padding: 15px 15px;
-    flex: 1;
-    width: 150px;
+    padding: 10px 10px;
+    width: 130px;
     transition: ease-in-out;
+    margin: 15px 12px;
+    height: 5rem;
+    width: 5rem;
   }  
   .pantryHeader {
     text-align: center;
     color:  #44D362;
     transition: 1.5s;
     text-shadow: 2px 2px 4px #ffffff;
+    padding: 1rem 2rem;
   }
 }
 
@@ -247,7 +336,7 @@ main {
  /* Bordered form */
  form {
   border: 3px solid #f1f1f1;
-  margin: 0 20% 5% 20%;
+  margin: 10% 20% 5% 10%;
   background-color: rgba(255, 255, 255, 0.7);
  }
 
@@ -277,22 +366,16 @@ button {
 button:hover {
   background-color:#77DF79  ;
 }
-
 /* Extra style for the cancel button (red) */
 .cancelbtn {
   width: auto;
   padding: 10px 18px;
   background-color: #DFA995;
 }
-
-
-
 /* Add padding to containers */
 .container {
   padding: 16px;
 }
-
-
 /* The "Forgot password" text */
 span.psw {
   float: right;
@@ -302,7 +385,6 @@ span.usr{
   float: right;
   padding: 16px;
 }
-
 #signupbtn{
   list-style: none; 
   text-decoration: none;
@@ -321,7 +403,6 @@ span.usr{
   font-size: 20px;
 
 }
-
 /* Change styles for span and cancel button on extra small screens */
 @media screen and (max-width: 600px) {
   span.psw {
@@ -348,7 +429,8 @@ span.usr{
   }
 
   form{
-    margin-top: 10%;
+    margin: 10% 10%;
+
   }
 } 
 #loginBody{
@@ -358,12 +440,15 @@ span.usr{
   background-repeat: no-repeat;
 }
 
-/*RECIPE PAGE*/
 
+
+
+/*RECIPE PAGE*/
 .column{
   display: flex;
   flex-direction: column;
 }
+
  .card{
    background-color: rgba(255, 255, 255, 0.5);
   text-align: center;
@@ -371,14 +456,13 @@ span.usr{
    box-shadow: 10px 10px 5px grey;
   padding: 10px 10px 10px 10px ;
   margin: 25px 25px 25px 25px;
+  width: 80vw;
  }
-
-
-
-
-
+ 
 
 /*colors
+
+
 DARK PINK: #DFA995
 LIGHT PINK: #E6B9A1
 GRAY?: #E6E6CA
