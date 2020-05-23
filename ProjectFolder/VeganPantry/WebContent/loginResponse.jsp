@@ -32,19 +32,15 @@ try {
 
 //Step 3: generate HTML content/////////////////////////////////////////////////////////////////////////////////////
 
+
+String sessionMessage;
 //If user is authenticated they are redirected to the homepage
 if(userAuthenticated) {
 	
-	
-	/***********************************
-	login session is being created
-	
-	session.setAttribute("userSession", obj_Login_Bean.getUser_name())
-	
-	************************************/
-	
+	sessionMessage = "Hello " + inputEmail;
+	session.setAttribute("userSession", sessionMessage);
 	%>
-	<script>//redirects to homepage
+	<script type="text/javascript">//redirects to homepage
 		window.location.href="http://localhost:8080/VeganPantry/home.html"
 	</script>
 	<% 	
@@ -52,9 +48,10 @@ if(userAuthenticated) {
 
 //If the user is not authenticated they are redirected to the login page with a message
 else{
-	session.setAttribute("loginMessage", "Login Failed, Incorrect Email or Password. Please try again :D");
+	sessionMessage = "Login Failed, Incorrect Email or Password. Please try again :D";
+	session.setAttribute("loginMessage", sessionMessage);
 %>
-	<script>//redirects to homepage
+	<script type="text/javascript">//redirects to homepage
 		window.location.href="http://localhost:8080/VeganPantry/login.jsp"
 	</script>
 <%

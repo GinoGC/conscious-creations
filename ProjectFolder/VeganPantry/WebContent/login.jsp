@@ -52,9 +52,9 @@
   </div>
 </form> 
 <%
-String message= (String)session.getAttribute("loginMessage");
+String message = (String)session.getAttribute("loginMessage");
 
-if(message !=null){
+if(message != null){
 	out.println(message);
 	session.removeAttribute("loginMessage");
 }

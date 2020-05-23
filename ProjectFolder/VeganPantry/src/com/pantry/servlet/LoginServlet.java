@@ -3,6 +3,8 @@ package com.pantry.servlet;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -76,28 +78,19 @@ public class LoginServlet extends HttpServlet {
 		
 		//Step 3: generate HTML content/////////////////////////////////////////////////////////////////////////////////////
 		
+		ServletContext sc = this.getServletContext();
+		RequestDispatcher rd = sc.getRequestDispatcher("http://localhost:8080/VeganPantry/home.jsp");
+		
+		
+		
 		
 		if(userAuthenticated) {
 			
-			out.println("<html><body>");
-
-			out.println("");
-			out.println("Input email value = " + inputEmail);
-			out.println("<br><br>");
-			out.println("The user has been authenticated: " + userAuthenticated);
-			
-			out.println("</html></body>");
+			response.sendRedirect("http://localhost:8080/VeganPantry/home.html");
 		}
 		
 		else {
-			out.println("<html><body>");
-
-			out.println("");
-			out.println("Input email value = " + inputEmail);
-			out.println("<br><br>");
-			out.println(userAuthenticated);
-			
-			out.println("</html></body>");
+			response.sendRedirect("http://localhost:8080/VeganPantry/login.jsp");
 		}
 		
 		

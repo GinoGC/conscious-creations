@@ -26,14 +26,23 @@
     </header>
     <body class='homebody'>
     
-    <!---------------------
-    This is where the login session cookie will be
+	<%
+    //This is where the login session cookie will be
     
-    Login_Bean obj_LoginBean = (Login_Bean)session.getAttribute("userSession");
-    
-    
-    
-     ---------------------->
+    String userSession = (String)session.getAttribute("userSession");
+	
+    if(userSession==null){
+    	String sessionMessage = "Please log in";
+    	session.setAttribute("loginMessage", sessionMessage);
+    	
+    %>
+	<script type="text/javascript">
+		window.location.href="http://localhost:8080/VeganPantry/login.jsp"
+	</script>
+	<%
+    }
+    %>
+
       <div class='home'>
         <div class='home-item-1'>
          <h2 ><a id='pageAnchor1' class='page-anchor' href="pantry.html">Pantry</a></h2>
