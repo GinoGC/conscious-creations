@@ -92,6 +92,15 @@ main {
 }
 
 @media screen and (max-width:600px){
+  body::-webkit-scrollbar{
+    width: .25rem;
+    background-color: #44D362;
+  }
+  body::-webkit-scrollbar-thumb{
+
+    height: 10px;
+  }
+
   main{ 
     margin: 0 0;
     margin-bottom: 5rem;
@@ -301,6 +310,7 @@ main {
 }
 
 @media screen and (max-width:600px){
+ 
   .pantry{
     display: flex;
     flex-direction: column;
@@ -385,7 +395,10 @@ span.usr{
   float: right;
   padding: 16px;
 }
-#signupbtn{
+.signup{
+  display: flex;
+}
+#signupbtn {
   list-style: none; 
   text-decoration: none;
   color: black;
@@ -397,12 +410,17 @@ span.usr{
   cursor: pointer;
   width: 100%;
   transition: .3s;
+  justify-content: flex-start;
 }
 #signupbtn:hover{
   color: #4CAF50 ;
   font-size: 20px;
 
 }
+#signUpMessage{
+justify-content: flex-end;
+}
+
 /* Change styles for span and cancel button on extra small screens */
 @media screen and (max-width: 600px) {
   span.psw {
@@ -439,7 +457,7 @@ span.usr{
   background-position: none;
   background-repeat: no-repeat;
 }
-
+ 
 
 
 
@@ -461,6 +479,8 @@ span.usr{
  
 
 /*colors
+
+
 DARK PINK: #DFA995
 LIGHT PINK: #E6B9A1
 GRAY?: #E6E6CA
