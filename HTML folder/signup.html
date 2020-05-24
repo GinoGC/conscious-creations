@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Log In</title>
+  <link href="style.css" rel="stylesheet" type="text/css">
+</head>
+<body id= 'loginBody'> 
+  <nav class='navbar' id='navbarLogIn'> 
+    <li class='logo'> 
+      <img src="icons8-double-right-100.png" alt="double arrow symbol">
+      <span class='link-text'>Conscious Creations</span>
+    </li>       
+    <a class= 'nav-link' href='home.html'>
+      <img class='nav-icons' src="icons8-home-48.png" alt="Home icon">
+      <span class='link-text'>Home</span>
+    </a>             
+   <a class='nav-link'href='pantry.html'>
+     <img class='nav-icons' src="icons8-ingredients-50.png" alt="pantry icon">
+     <span class='link-text'>Pantry</span>
+    </a> 
+   <a class='nav-link' href="recipes.html">
+     <img class='nav-icons' src="icons8-cooking-book-50.png" alt="recipe icon">
+     <span class='link-text'>Recipes</span>
+    </a>
+  <a class='nav-link' href="logIn.html">
+    <img class='nav-icons' src="icons8-login-48.png" alt="login icon">
+    <span class='link-text'>Login</span>
+   </a>
+</nav>
+  <main  class='form'>
+    <form action="action_page.php" method="post">   
+      <div class="container">
+        <label for="username"><b>Email</b></label>
+        <input type="text" placeholder="Enter Email" name="email" required>
+        <label for="psw"><b>Password</b></label>
+         <input type="password" placeholder="Enter Password" name="passwd" required>
+          <button type="submit">Login</button>
+        <label>
+        <input type="checkbox" checked="checked" name="remember"> Remember me
+        </label>
+      </div>
+      <div class="container" style="background-color:#f1f1f1">
+        <button type="button" class="cancelbtn">Cancel</button>
+        <span class="psw">Forgot <a href="#">password?</a></span>
+        <span class="usr">Forgot <a href="#">username?</a></span>
+      </div>
+      <div class='signup'>
+          <a id="signupbtn" href="signup.html">Sign Up
+          </a>
+        <p id='signUpMessage'><em>Please make a free account to access site features.</em><p>
+      </div>
+    </form> 
+  </main>
+</body>
+</html>
