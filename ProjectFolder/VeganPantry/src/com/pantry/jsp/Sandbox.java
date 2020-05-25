@@ -1,6 +1,7 @@
 package com.pantry.jsp;
 
-
+import java.util.ArrayList;
+import java.util.Collections;
 
 //This is a testing ground for the Vegan Pantry app
 public class Sandbox{
@@ -8,6 +9,8 @@ public class Sandbox{
 
 	public static void main(String args[]) throws Exception{
 		 
+		 
+		
 		 //parameters to be passed to the PantryDB object
 		 String dbURL = "jdbc:mysql://localhost:3306/VeganPantry";
 		 String dbUsername = "root";
@@ -25,9 +28,20 @@ public class Sandbox{
 
 		 
 		 //test methods
-		 boolean methodOutput = connection.authenticate(email, password);
-		 System.out.println(methodOutput);
-
+		 //boolean methodOutput = connection.authenticate(email, password);
+		 //System.out.println(methodOutput);
+		 
+		 ArrayList<String> list = new ArrayList<>();
+		 
+		 String[] array = {"this", "is", "a", "test"};
+		 
+		 for(int i=0 ; i<=array.length-1 ; i++) {
+			 list.add(array[i]);
+		 }
+		 
+		 System.out.println(list+" ");
+		 Collections.sort(list);
+		 System.out.println(list+" ");
 		}
 	
 }

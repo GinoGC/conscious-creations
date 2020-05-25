@@ -88,15 +88,15 @@ public class PantryDB{
 	  
 	  //accepts a result set and column name as parameters and returns a single value
 	  public String getValue(ResultSet rs, String column) throws Exception{
-		  String pass = null;
+		  String value = null;
 		  
 		  if(rs.next()) {
 			  
-			  pass = rs.getString(column);
+			  value = rs.getString(column);
 		  }
-		  return pass;
+		  return value;
 	  }
-	  
+	   
 	  
 	  
 	  
