@@ -8,12 +8,12 @@ public class PantryObject {
 	
 	
 	
-	
-	
-	public PantryObject(String[] inputIngredients, int[] inputQuantity) {
+	public void addIngredients(String[] names, int[] quantities) {
 		
-		this.ingredients = inputIngredients;
-		this.quantity = inputQuantity;
+		for(int i=0; i<=names.length-1; i++) {
+			this.ingredients[i] = names[i];
+			this.quantity[i] = quantities[i];
+		}
+		
 	}
-
 }

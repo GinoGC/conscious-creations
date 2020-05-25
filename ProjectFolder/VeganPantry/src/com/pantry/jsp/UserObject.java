@@ -35,49 +35,16 @@ public class UserObject {
 	
 	
 	//should be called after a new account is created. 
-	public UserObject(String inputEmail, String inputPasswd, Connection conn){
-
-		  PreparedStatement pstmt = null;
-		  int pantryTemp[]; 
-		  
-		  try{
-		         
-		         //calls getConnection method to establish connection to MySQL server
-		         //Connection conn = getConnection();
-		         
-		         String query = "SELECT * FROM users WHERE email = '" + inputEmail + 
-		        		 					"' AND Passwd = '" + inputPasswd + "';";
-		        		 
-		      
-		         
-		         pstmt = conn.prepareStatement(query);
-		         ResultSet rs = pstmt.update();
-		         if(rs.next()) {
-		        	 
-		        	 //needs to retrieve values for username and int[]
-		        	 this.username = rs.getString(username);
-		        	 
-		        	 }
-		         
-
-		       } catch (SQLException e) { 
-		         System.out.println("rowExists Failed to Execute");
-		         e.printStackTrace();
-		       } finally {
-		        	 try {
-		        		 if (pstmt != null) {
-		        			 pstmt.close();
-		        		 }	 
-		        	 }	
-		        	 catch(SQLException e){
-		        		 e.printStackTrace();
-		        	 }
-		           }
-		  //return exists;
+	public UserObject(String inputEmail) {
+		
+		
+		//Should be auto-initialized to include the users email and name
 		
 		
 		
 	}
+
+		  
 	
 	
 }
