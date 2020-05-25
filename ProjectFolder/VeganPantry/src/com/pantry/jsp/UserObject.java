@@ -9,7 +9,7 @@ public class UserObject {
 	
 
 	private String username;
-	private int[] pantry;
+	PantryObject pantry;
 	
 	
 	
@@ -25,15 +25,16 @@ public class UserObject {
 	
 	
 	
-	public int[] getPantry() {
+	public PantryObject getPantry() {
 		return pantry;
 	}
-	public void setPantry(int[] pantry) {
-		this.pantry = pantry;
+	public void setPantry(PantryObject input) {
+		this.pantry = input;
 	}
 	
 	
 	
+	//should be called after a new account is created. 
 	public UserObject(String inputEmail, String inputPasswd, Connection conn){
 
 		  PreparedStatement pstmt = null;
@@ -50,7 +51,7 @@ public class UserObject {
 		      
 		         
 		         pstmt = conn.prepareStatement(query);
-		         ResultSet rs = pstmt.executeQuery();
+		         ResultSet rs = pstmt.update();
 		         if(rs.next()) {
 		        	 
 		        	 //needs to retrieve values for username and int[]

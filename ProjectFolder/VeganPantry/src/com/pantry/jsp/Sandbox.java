@@ -42,6 +42,29 @@ public class Sandbox{
 		 System.out.println(list+" ");
 		 Collections.sort(list);
 		 System.out.println(list+" ");
+		 
+		 
+		 /*
+		 The user will select the amount of each item they want to add to 
+		 their pantry. When they click submit, the data will be sent as
+		 two arrays. 
+		 */
+		 String[] itemList; //This will contain the name of each ingredient added
+		 int[] itemQuantity; //This will contain the amount of each ingredient added
+		 /*
+		 Once the data arrives at the back end, itemList will be converted into a 
+		  */
+		 
+		 
 		}
 	
+
 }
+
+
+
+
+
+
+
+
