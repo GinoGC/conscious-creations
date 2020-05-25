@@ -26,30 +26,31 @@
     </a>
   <a class='nav-link' href="logIn.html">
     <img class='nav-icons' src="icons8-login-48.png" alt="login icon">
-    <span class='link-text'>Login</span>
+    <span class='link-text'>Sign up</span>
    </a>
 </nav>
   <main  class='form'>
     <form action="action_page.php" method="post">   
       <div class="container">
+        <label for="username"><b>Full Name</b></label>
+        <input type="text" placeholder="First Name" name="firstname" required>
+        <input type="text" placeholder="Middle Initial" name="middleinitial">
+        <input type="text" placeholder="Last Name" name="lastname" required>
         <label for="username"><b>Email</b></label>
         <input type="text" placeholder="Enter Email" name="email" required>
         <label for="psw"><b>Password</b></label>
          <input type="password" placeholder="Enter Password" name="passwd" required>
-          <button type="submit">Login</button>
+         <label for="psw"></label>
+         <input type="password" placeholder="Re-enter Password" name="passwd" required>
+          <button type="submit">Signup</button>
         <label>
-        <input type="checkbox" checked="checked" name="remember"> Remember me
-        </label>
+        <input type="checkbox" checked="checked" name="remember"> Remember me</label>
       </div>
       <div class="container" style="background-color:#f1f1f1">
         <button type="button" class="cancelbtn">Cancel</button>
-        <span class="psw">Forgot <a href="#">password?</a></span>
-        <span class="usr">Forgot <a href="#">username?</a></span>
+    
       </div>
-      <div class='signup'>
-          <a id="signupbtn" href="signup.html">Sign Up
-          </a>
-        <p id='signUpMessage'><em>Please make a free account to access site features.</em><p>
+    
       </div>
     </form> 
   </main>
