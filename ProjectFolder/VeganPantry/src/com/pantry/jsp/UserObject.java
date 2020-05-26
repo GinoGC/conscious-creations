@@ -1,11 +1,12 @@
 package com.pantry.jsp;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+//import java.sql.Connection;
+//import java.sql.PreparedStatement;
+//import java.sql.ResultSet;
+//import java.sql.SQLException;
 
-public class UserObject {
+
+public class UserObject extends PantryObject{
 	
 
 	private String username;
@@ -14,12 +15,11 @@ public class UserObject {
 	
 	
 	
-	
 	public String getUsername() {
 		return username;
 	}
-	public void setUsername(String username) {
-		this.username = username;
+	public void setUsername(String input) {
+		this.username = input;
 	}
 	
 	
@@ -34,14 +34,11 @@ public class UserObject {
 	
 	
 	
+	
 	//should be called after a new account is created. 
-	public UserObject(String inputEmail) {
+	public UserObject(String inputName) {
 		
-		
-		//Should be auto-initialized to include the users email and name
-		
-		
-		
+		this.username = inputName;
 	}
 
 		  

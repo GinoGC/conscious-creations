@@ -1,6 +1,7 @@
 package com.pantry.jsp;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 
 //This is a testing ground for the Vegan Pantry app
@@ -39,9 +40,9 @@ public class Sandbox{
 			 list.add(array[i]);
 		 }
 		 
-		 System.out.println(list+" ");
-		 Collections.sort(list);
-		 System.out.println(list+" ");
+		 //System.out.println(list+" ");
+		 //Collections.sort(list);
+		 //System.out.println(list+" ");
 		 
 		 
 		 /*
@@ -49,15 +50,22 @@ public class Sandbox{
 		 their pantry. When they click submit, the data will be sent as
 		 two arrays. 
 		 */
-		 String[] itemList; //This will contain the name of each ingredient added
-		 int[] itemQuantity; //This will contain the amount of each ingredient added
-		 /*
-		 Once the data arrives at the back end, itemList will be converted into a 
-		  */
+		 String username = "JHester23";
 		 
+		 String[] items = {"cabbage", "radish", "ginger", "squash"};
+		 int[] quantity = {1, 2, 1, 4};
 		 
-		}
-	
+		
+		UserObject jordan = new UserObject("Jhester23");
+		PantryObject jordansPantry = new PantryObject();
+		
+		
+		jordan.setPantry(jordansPantry);
+		jordan.addIngredients(items, quantity);
+		
+		jordan.print();
+		
+	}
 
 }
 
