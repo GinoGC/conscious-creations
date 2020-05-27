@@ -52,7 +52,7 @@ public class Sandbox{
 		 */
 		 String username = "JHester23";
 		 
-		 String[] items = {"cabbage", "radish", "ginger", "squash"};
+		 String[] items = {"cabbage", "turmeric", "ginger", "squash"};
 		 int[] quantity = {1, 2, 1, 4};
 		 
 		

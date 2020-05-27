@@ -22,11 +22,13 @@ public class PantryObject {
 	public void print() {
 		
 		System.out.println("Ingredients \tQuantity");
+		System.out.printf("Ingredients: %10s\n", "Quantity");
 
 		for(int i=0; i<=ingredients.size()-1; i++) {
 			
 			
-			System.out.println(ingredients.get(i) + "\t\t" + quantities.get(i));
+			//System.out.printf(ingredients.get(i),  " " + quantities.get(i));
+			System.out.printf("%-10s %5d \n", ingredients.get(i) + ":", quantities.get(i));
 		}
 	}
 	
