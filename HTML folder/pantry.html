@@ -25,6 +25,10 @@
          <img class='nav-icons' src="icons8-cooking-book-50.png" alt="recipe icon">
          <span class='link-text'>Recipes</span>
         </a>
+        <a class='nav-link' href="shoppinglist.html">
+          <img class='nav-icons' src="list.png" alt="recipe icon">
+          <span class='link-text'>Shopping List</span>
+         </a>
       <a class='nav-link' href="logIn.html">
         <img class='nav-icons' src="icons8-login-48.png" alt="login icon">
         <span class='link-text'>Login</span>
@@ -35,20 +39,32 @@
           <h2>Select the Items in Your Pantry</h2>
         </div>
         <div class="pantry-items">
-          <div class="btn-group">
-            <button type="button" class="button">Apple's</button>
-            <button type="button" class="button">Pepper</button>
-            <button type="button" class="button">Seitan</button>
-            <button type="button" class="button">Salt</button>
-            <button type="button" class="button">Cucumber</button>
-            <button type="button" class="button">Vital Wheat Gluten</button>
-            <button type="button" class="button">Nutrional Yeast</button>
-            <button type="button" class="button">Cauliflower</button>
-            <button type="button" class="button">Asparagus</button>
-            <button type="button" class="button">Tortilla</button>
-            <button type="button" class="button">Flour</button>
-            <button type="button" class="button">Smoked Paprika</button>
-          </div> 
+          <form class="pantry-form" action="">
+            <input type="checkbox" class='checkbox' name="pantry-item" id="item1">
+            <label class='item-label' for="item1">Apple</label>
+                <label class='serving-size'>Serving Size:</label>
+                <input type="number" min='1' max='50'  name="servings" id="apple" class="serving-size">
+             <input type="checkbox" class='checkbox' name="pantry-item" id="item2">
+             <label class='item-label' for="item2">All Spice</label>
+               <label class='serving-size'>Serving Size:</label>
+               <input type="number" min='1' max='50' name="servings" id="allSpice" class="serving-size">                           
+           <input type="checkbox" class='checkbox' name="pantry-item" id="item3">
+            <label class='item-label' for="item3">Apple Cider Vinegar</label>
+                <label class='serving-size'>Serving Size:</label>
+                <input type="number" min='1' max='50'  name="servings" id="appleCiderVinegar" class="serving-size">                           
+            <input type="checkbox" class='checkbox' name="pantry-item" id="item4">
+            <label class='item-label' for="item4">Arugula</label>
+                <label class='serving-size'>Serving Size:</label>
+                <input type="number" min='1' max='50'  name="servings" id="argula" class="serving-size">
+           <input type="checkbox" class='checkbox' name="pantry-item" id="item5">
+            <label class='item-label' for="item5">Almonds</label>
+                <label class='serving-size'>Serving Size:</label>
+                <input type="number" min='1' max='50'  name="servings" id="almonds" class="serving-size">
+            <input type="checkbox" class='checkbox' name="pantry-item" id="item6">
+            <label class='item-label' for="item6">All-Purpose Flour</label>
+                <label class='serving-size'>Serving Size:</label>
+                <input type="number" min='1' max='50'  name="servings" id="allPurposeFlour" class="serving-size">
+           </form>
         </div>
       </main>
     </body>
